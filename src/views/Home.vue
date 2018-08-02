@@ -78,10 +78,10 @@
     <footer>
       <p>Made by Michael Sinov</p>
       <p class="social-links">
-        <a href="https://twitter.com/sihaelov" class="twitter">
+        <a href="https://twitter.com/sihaelov" target="_blank" class="twitter">
           <i class="fab fa-twitter-square"></i>
         </a>
-        <a href="https://github.com/sihaelov" class="github">
+        <a href="https://github.com/sihaelov" target="_blank" class="github">
           <i class="fab fa-github-square"></i>
         </a>
       </p>
