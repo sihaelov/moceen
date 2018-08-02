@@ -16,15 +16,19 @@
 
 body{
   margin: 0;
-
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
+  background-color: #fafafa;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #fafafa;
+  overflow-x: hidden;
+}
+
+p{
+  color: rgba(0, 0, 0, 0.87);
 }
 
 a{

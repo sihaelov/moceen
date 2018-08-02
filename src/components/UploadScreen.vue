@@ -20,10 +20,10 @@
       </el-card>
     </el-tab-pane>
 
-    <el-tab-pane label="Direct Link">
+    <el-tab-pane label="Direct Link" disabled>
       <el-card>
         <el-input
-          :value="imageUrl" placeholder="Paste your link here..."
+          :value="imageUrl" placeholder="Paste your link to an image here..."
           @input="$emit('update:imageUrl', $event)"
         >
           <el-button slot="append" icon="el-icon-upload"

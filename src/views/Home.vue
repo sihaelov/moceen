@@ -1,6 +1,24 @@
 <template>
   <div class="main">
 
+    <header>
+      <!--
+      <div>
+        <a href="#" class="twitter">
+          <i class="fab fa-twitter"></i> Tweet
+        </a>
+
+        <a href="#" class="facebook">
+          <i class="fab fa-facebook"></i> Share
+        </a>
+      </div>
+      -->
+
+      <a href="https://github.com/sihaelov/moceen" target="_blank" class="header__github">
+        Github
+      </a>
+    </header>
+
     <div class="steps">
       <template v-for="(step, index) in stepList">
 
@@ -39,7 +57,6 @@
     <el-card class="email-form">
 
       <h2>Newsletter</h2>
-      <!-- <p>We don't spam! Sign up to stay updated about cool updates.</p> -->
       <p>We don't spam! Sign up to stay updated about new cool features and improvements.</p>
 
       <form
@@ -61,10 +78,10 @@
     <footer>
       <p>Made by Michael Sinov</p>
       <p class="social-links">
-        <a href="https://twitter.com/sihaelov" class="social-links__twitter">
+        <a href="https://twitter.com/sihaelov" class="twitter">
           <i class="fab fa-twitter-square"></i>
         </a>
-        <a href="https://github.com/sihaelov" class="social-links__github">
+        <a href="https://github.com/sihaelov" class="github">
           <i class="fab fa-github-square"></i>
         </a>
       </p>
@@ -80,11 +97,7 @@ import UploadScreen from '@/components/UploadScreen.vue';
 import PreviewScreen from '@/components/PreviewScreen.vue';
 
 import Vue from 'vue';
-import {
-  Button, Card, Input, Loading, Notification,
-  Tabs, TabPane, RadioGroup, RadioButton,
-  ColorPicker,
-} from 'element-ui';
+import { Button, Card, Input, Loading, Notification } from 'element-ui';
 
 Vue.use(Loading.directive);
 Vue.prototype.$notify = Notification;
@@ -99,11 +112,6 @@ export default {
     'el-button': Button,
     'el-card': Card,
     'el-input': Input,
-    'el-tabs': Tabs,
-    'el-tab-pane': TabPane,
-    'el-radio-group': RadioGroup,
-    'el-radio-button': RadioButton,
-    'el-color-picker': ColorPicker,
   },
   data() {
     return {
@@ -219,7 +227,54 @@ export default {
 <style>
 
 .main{
-  margin-top: 40px;
+}
+
+header{
+  margin-left: 20px;
+}
+
+header a{
+  color: rgba(0, 0, 0, 0.8);
+}
+
+header a:hover{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.header__github{
+  display: block;
+  background-color: #000;
+  transform: rotateZ(30deg);
+  text-align: center;
+  font-weight: 600;
+  line-height: 30px;
+  position: absolute;
+  color: #fff;
+
+  height: 30px;
+  width: 200px;
+  right: -30px;
+  top: 20px;
+}
+
+.header__github:hover{
+  color: rgba(255, 255, 255, 0.95);
+}
+
+header a.facebook{
+  margin-left: 15px;
+}
+
+.facebook i.fab{
+  color: #3b5998;
+}
+
+.twitter i.fab{
+  color: #1da1f2;
+}
+
+.github i.fab{
+  color: #000;
 }
 
 .steps{
@@ -229,8 +284,7 @@ export default {
   display: flex;
   justify-content: space-between;
   max-width: 600px;
-  margin: auto;
-  margin-bottom: 50px;
+  margin: 40px auto 50px;
   font-size: 16px;
   line-height: 20px;
 }
@@ -321,14 +375,6 @@ footer .social-links a{
 
 footer .social-links a:hover{
   opacity: 0.7;
-}
-
-footer .social-links__twitter{
-  color: #1da1f2;
-}
-
-footer .social-links__github{
-  color: #000;
 }
 
 /* BASE */

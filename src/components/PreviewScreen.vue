@@ -65,7 +65,7 @@
 
 import { Button, RadioGroup, RadioButton, ColorPicker } from 'element-ui';
 
-import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver/FileSaver';
 
 export default {
@@ -102,10 +102,8 @@ export default {
   }, // data
   methods: {
     download() {
-      html2canvas(this.$refs.screen).then((canvas) => {
-        canvas.toBlob((blob) => {
-          saveAs(blob, 'screen.png');
-        });
+      domtoimage.toBlob(this.$refs.screen).then((blob) => {
+        saveAs(blob, 'screen.png');
       });
     },
     changeColor(color) {
@@ -119,13 +117,8 @@ export default {
 
       contentImage.onload = () => {
         const imageRatio = contentImage.naturalWidth / contentImage.naturalHeight;
-        if (contentImage.naturalWidth >= contentImage.naturalHeight) {
-          this.imageWidth = contentImage.naturalWidth < 700 ? contentImage.naturalWidth : 700;
-          this.imageHeight = this.imageWidth / imageRatio;
-        } else {
-          this.imageHeight = contentImage.naturalHeight < 500 ? contentImage.naturalHeight : 500;
-          this.imageWidth = imageRatio * this.imageHeight;
-        }
+        this.imageWidth = contentImage.naturalWidth < 700 ? contentImage.naturalWidth : 700;
+        this.imageHeight = this.imageWidth / imageRatio;
       };
     }
   },
@@ -206,7 +199,7 @@ export default {
   margin: auto;
 
   /* height: 500px; */
-  max-height: 700px;
+  /* max-height: 700px; */
   max-width: 700px;
   padding: 75px;
   display: inline-flex;
