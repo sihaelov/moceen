@@ -20,7 +20,7 @@
     <div class="device-list-screen__row">
       <h2>Static</h2>
       <p>
-        Note: all devices was created
+        Note: all devices were created
         <a href="https://facebook.design/devices" target="_blank">by Facebook</a>
       </p>
       <el-card
