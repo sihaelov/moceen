@@ -20,7 +20,7 @@
           :key="color"
           :style="{ backgroundColor: color }"
           :class="{ active: currentColor == color }"
-          @click="currentColor = color;"
+          @click="currentColor = color"
           ></div>
       </div> <!-- /.preview-screen__palette -->
 

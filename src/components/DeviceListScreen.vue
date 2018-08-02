@@ -164,5 +164,11 @@ export default {
   width: 200px;
 }
 
+@media(max-width: 1200px){
+  .device-list-screen{
+    margin: 0 30px;
+  }
+}
+
 
 </style>
