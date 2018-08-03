@@ -41,7 +41,7 @@
     <div v-else class="upload-screen__example-image">
       <p>Or drag the sample image</p>
       <i class="far fa-hand-rock fa-2x"></i>
-      <img src="/example.jpeg" />
+      <img src="/example.jpeg" title="Drag and drop me onto the widget" />
     </div>
 
   </el-tabs>
@@ -75,7 +75,7 @@ export default {
 
       const imageElement = $event.dataTransfer.getData('text/html');
       if (imageElement) {
-        const re = /<img src="(.+\/example.jpeg)">/;
+        const re = /<img src="(.+\/example.jpeg)" .+>/;
         const reResult = re.exec(imageElement);
         if (reResult.length > 1) {
           const imageUrl = reResult[1];
@@ -94,7 +94,7 @@ export default {
 <style>
 
 .upload-screen{
-  width: 400px;
+  max-width: 400px;
   margin: auto;
   margin-bottom: 150px;
 }
@@ -151,6 +151,12 @@ export default {
   display: block;
   margin: auto;
   margin-top: 10px;
+}
+
+@media(max-width: 450px){
+  .upload-screen{
+    padding: 0 10px;
+  }
 }
 
 </style>

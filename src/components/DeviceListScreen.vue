@@ -164,9 +164,26 @@ export default {
   width: 200px;
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1170px){
   .device-list-screen{
-    margin: 0 30px;
+    padding: 0 30px;
+  }
+
+  .device-list-screen__row{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .device-list-screen__device-preview{
+    width: 230px;
+    height: 280px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  .device-list-screen__device-preview img{
+    max-width: 180px;
+    max-height: 230px;
   }
 }
 

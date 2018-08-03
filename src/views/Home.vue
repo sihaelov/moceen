@@ -226,11 +226,8 @@ export default {
 
 <style>
 
-.main{
-}
-
 header{
-  margin-left: 20px;
+  /* margin-left: 30px; */
 }
 
 header a{
@@ -287,6 +284,7 @@ header a.facebook{
   margin: 40px auto 50px;
   font-size: 16px;
   line-height: 20px;
+  flex-wrap: wrap;
 }
 
 .steps > div{
@@ -425,5 +423,45 @@ footer .social-links a:hover{
 }
 
 /* BASE */
+
+@media(max-width: 1170px){
+  .header__github{
+    position: relative;
+    transform: rotateZ(0);
+    width: 100px;
+    right: 0;
+    top: 0;
+    margin: 20px auto;
+  }
+}
+
+@media(max-width: 700px){
+  .steps{
+    max-width: 400px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .steps > i.el-icon-arrow-right{
+    display: none;
+  }
+
+  .steps > div{
+    width: 100%;
+    margin-top: 7px;
+  }
+
+  .steps > div:not(:last-child)::after{
+    content: '';
+    width: 2px;
+    height: 20px;
+    display: block;
+    margin: 7px auto 0;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
 
 </style>

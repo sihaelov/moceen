@@ -132,8 +132,9 @@ export default {
 }
 
 .preview-screen__header{
-  width: 500px;
+  max-width: 500px;
   margin: auto;
+  padding: 0 10px;
 }
 
 .preview-screen__options{
